@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2022世界10大稻米生产国占比</title>
+    <script src="static/js/echarts.js"></script>
+    <script src="static/js/infographic.js"></script>
+    <style>
+        #main{
+            border: 1px solid rgb(179, 170, 170);
+            left: 0px;
+            right: 0px;
+            margin: 40px auto;
+        }
+    </style>
+    <script>
+        var d = document.documentElement;
+        var cw = d.clientWidth || 750;
+        document.documentElement.style.fontSize = (cw/750 * 100) + 'px';
+    </script>
+</head>
+
+<body>
+    <div id="main" style="width: 4.5rem;height:3.5rem;"></div>
+
+    <script>
+        //初始化echarts实例
+        const myChart = echarts.init(document.getElementById('main'), 'infographic');
+        option = {
+            title: {
+                text: '2022世界10大稻米生产国占比',
+                subtext: '中国是世界上最大的稻米生产国',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left'
+            },
+            series: [
+                {
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: '50%',
+                    data: [
+                        { value: 33.2, name: '中国' },
+                        { value: 28.0, name: '印度' },
+                        { value: 8.9, name: '孟加拉' },
+                        { value: 8.7, name: '印度尼西亚' },
+                        { value: 6.6, name: '越南' },
+                        { value: 4.7, name: '泰国' },
+                        { value: 4.0, name: '缅甸' },
+                        { value: 2.9, name: '菲律宾' },
+                        { value: 1.8, name: '巴西' },
+                        { value: 1.2, name: '柬埔寨' },
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
